@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #1663df;
+    --secondary: #1d79f3;
+    --tertiary: #1a468e;
+    --light: #eef8ff;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    height: 100vh;
+    background: var(--light);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--light);
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.nav-link {
+    margin-right: 40px;
+    color: var(--light);
+}
+
+a {
+    text-decoration: none;
+}
+
+img.principal-1 {
+    width: 100%;
+}
+
+strong {
+    font-weight: 700;
+}
+
+.container-quienes-somos {
+    max-width: 1120px;
+}
+
+.container-quienes-somos p {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+section.quienes-somos {
+    display: flex;
+    justify-content: center;
+    margin: 20px 10px 40px 10px;
+}
+
+#Somos, #Servicios, #Contacto, #Clientes {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.container-nuestros-servicios {
+    background: var(--tertiary);
+    padding: 20px 10px 20px 10px;
+    height: 470px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.consultoria, .entrenamiento {
+    background: var(--light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 22px;
+    line-height: 29px;
+    font-weight: 700;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    width: 500px;
+    height: 300px;
+    border-radius: 20px;
+}
+
+article a{
+    background: var(--primary);
+    padding: 10px 20px;
+    color: var(--light);
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+.container-clientes {
+    display: flex;
+    gap: 20px;
+}
+
