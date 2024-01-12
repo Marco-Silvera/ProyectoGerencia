@@ -17,16 +17,53 @@ body {
     padding: 0;
     font-family: 'Raleway', sans-serif;
     height: 100vh;
+    width: 100%;
     background: var(--light);
     display: flex;
     flex-direction: column;
 }
 
+
+
+section.imagen {
+    background-image: url(images/consultoria-1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 80px);
+    position: relative;
+    z-index: -1;
+    top: 80px;
+}
+
+.imagen h1 {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: calc(50% - 60px);
+    right: 10px;
+    font-size: 40px;
+    color: var(--);
+}
+
+.imagen p {
+    color: #fff;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 50%;
+    right: 10px;
+    font-weight: bold;
+}
+
+
 header {
+    position: fixed;
     background: var(--primary);
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 100vw;
     height: 80px;
 }
 
@@ -52,10 +89,6 @@ a {
     text-decoration: none;
 }
 
-img.principal-1 {
-    width: 100%;
-}
-
 strong {
     font-weight: 700;
 }
@@ -72,7 +105,7 @@ strong {
 section.quienes-somos {
     display: flex;
     justify-content: center;
-    margin: 20px 10px 40px 10px;
+    margin: 100px 10px 40px 10px;
 }
 
 #Somos, #Servicios, #Contacto, #Clientes {
@@ -110,7 +143,7 @@ section.quienes-somos {
     text-align: center;
     margin-top: 20px;
     padding: 10px 20px;
-    width: 500px;
+    max-width: 500px;
     height: 270px;
     border-radius: 20px;
 }
@@ -135,52 +168,6 @@ article a{
 #Contacto{
     margin: 0;
 }
-
-.contacto {
-    margin-top: 80px;
-}
-
-.oficinas {
-    width: 100%;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.oficina-madrid, .oficina-lima {
-    flex: 1;
-    background: red;
-    margin: 0 20px 0 20px;
-    max-width: 500px;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-}
-
-.oficina-madrid h3,.oficina-lima h3 {
-    color: var(--primary);
-    margin: 0;
-    font-size: 25px;
-    font-weight: 600;
-}
-
-.oficina-madrid p, .oficina-lima p {
-    color: black;
-    margin: 0px 5px 0px 0px;
-}
-
-.oficinas button {
-    background: var(--primary);
-    border: none;
-    height: 40px;
-    width: 60px;
-    border-radius: 5px;
-    margin-top: 5px;
-}
-
 
 footer {
     padding-top: 20px;
@@ -258,20 +245,7 @@ footer p {
 }
 
 @media (max-width: 800px) {
-    .oficinas {
-        flex-direction: column;
-        height: 800px;
-        width: 100%;
-    }
-
-    .oficina-madrid, .oficina-lima {
-        flex: 1;
-        background: red;
-        width: 700px;
-    }
-
     .cards {
-        flex: 2;
         flex-direction: column;
         align-items: center;
         gap: 20px;
