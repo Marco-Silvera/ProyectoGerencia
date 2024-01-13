@@ -20,10 +20,53 @@
             <img src="images/logo-consultoria.png" alt="Consultoria" height="40px">
             <h2>Nombre empresa</h2>
         </a>
+
+        <nav class="sidebar">
+            <ul class="list-sidebar">
+                <li>
+                    <a onclick=hideSidebar() class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                            height="30" viewBox="0 -960 960 960" width="30">
+                            <path
+                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                        </svg></a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Somos">¿Quienes Somos?</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Servicios">Servicios</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Clientes">Clientes</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Contacto">Contacto</a>
+                </li>
+            </ul>
+
+
+        </nav>
+
         <nav>
-            <a class="nav-link" href="#Somos">¿Quienes Somos?</a>
-            <a class="nav-link" href="#Servicios">Servicios</a>
-            <a class="nav-link" href="#Contacto">Contacto</a>
+            <li class="hideOnMobile">
+                <a class="nav-link" href="#Somos">¿Quienes Somos?</a>
+            </li>
+            <li class="hideOnMobile">
+                <a class="nav-link" href="#Servicios">Servicios</a>
+            </li>
+            <li class="hideOnMobile">
+                <a class="nav-link" href="#Clientes">Clientes</a>
+            </li>
+            <li class="hideOnMobile">
+                <a class="nav-link" href="#Contacto">Contacto</a>
+            </li>
+            <li class="menu-button">
+                <a onclick=showSidebar() class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30"
+                        viewBox="0 -960 960 960" width="30">
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                    </svg></a>
+            </li>
+
         </nav>
     </header>
 
@@ -32,9 +75,11 @@
 
     <main>
         <section class="imagen">
-            <h1>El Poder de la Asesoría</h1>
-            <p>Con experiencia e innovación, ofrecemos soluciones que impulsan el crecimiento. <br> Descubre cómo la
-                consultoría puede cambiar tu juego empresarial</p>
+            <div class="texto-imagen">
+                <h1>El Poder de la Asesoría</h1>
+                <p>Con experiencia e innovación, ofrecemos soluciones que impulsan el crecimiento. <br> Descubre cómo la
+                    consultoría puede cambiar tu juego empresarial</p>
+            </div>
         </section>
 
         <section class="quienes-somos">
@@ -86,7 +131,8 @@
                     </article>
                     <article class="entrenamiento">
                         <img src="images/icono-certificado.png" height="80px" alt="Icono Certificado">
-                        <h3>Entrenamiento y<br> Certificación Oficial</h3>
+                        <h3>Entrenamiento y Certificación <br> Oficial</h3>
+
                         <a href="entrenamiento.html">Más información</a>
                     </article>
                 </div>
@@ -95,20 +141,72 @@
         </section>
 
         <section class="nuestros-clientes">
-            <div class="clientes">
-                <h2 id="Clientes">Nuestros clientes</h2>
-                <div class="container-clientes">
-                    <img src="images/unfv.png" height="100px" alt="UNFV">
-                    <img src="images/win.webp" height="100px" alt="Win">
-                    <img src="images/tesla.png" height="100px" alt="Tesla">
-                    <img src="images/bcp.png" height="100px" alt="Banco de Crédito del Perú">
+            <h2 id="Clientes">Nuestros clientes</h2>
+
+            <div class="slider">
+                <div class="slide-track">
+                    <div class="slide">
+                        <img src="images/unfv.png" alt="UNFV">
+                    </div>
+                    <div class="slide">
+                        <img src="images/win.webp" alt="Win">
+                    </div>
+                    <div class="slide">
+                        <img src="images/tesla.png" alt="Tesla">
+                    </div>
+                    <div class="slide">
+                        <img src="images/bcp.png" alt="Banco de Crédito del Perú">
+                    </div>
+                    <div class="slide">
+                        <img src="images/repsol.png" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="images/interbank.svg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="images/caja-huancayo.png" alt="">
+                    </div>
+
+                    <div class="slide">
+                        <img src="images/unfv.png" alt="UNFV">
+                    </div>
+                    <div class="slide">
+                        <img src="images/win.webp" alt="Win">
+                    </div>
+                    <div class="slide">
+                        <img src="images/tesla.png" alt="Tesla">
+                    </div>
+                    <div class="slide">
+                        <img src="images/bcp.png" alt="Banco de Crédito del Perú">
+                    </div>
+                    <div class="slide">
+                        <img src="images/repsol.png" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="images/interbank.svg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="images/caja-huancayo.png" alt="">
+                    </div>
                 </div>
             </div>
+
         </section>
 
+        <section class="contacto">
+            <h2 id="Contacto">Contáctanos</h2>
+            <div class="info-contacto">
+                <h3>Oficina Lima</h3>
+                <p>Iquique 127, Lima 15082 <br> Anexo 8 <br>960 153 257</p>
+                <div class="mapa">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1379.5198856446748!2d-77.04414951187519!3d-12.052363762351026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8cff13d4e3f%3A0x97427793910d7b1a!2sUNFV%20Facultad%20De%20Ingenier%C3%ADa%20Electr%C3%B3nica%20e%20Inform%C3%A1tica%20-%20Anexo%208!5e0!3m2!1ses-419!2spe!4v1705109865795!5m2!1ses-419!2spe"
+                        width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
 
-
-
+        </section>
 
         <footer>
             <div class="redes">
