@@ -20,6 +20,8 @@ function hideSidebar() {
 }
 
 
+// Deslizamiento suave
+
 document.querySelectorAll('a.nav-link').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();

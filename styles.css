@@ -63,7 +63,7 @@ section.nuestra-metodologia {
     text-align: right;
     font-size: 40px;
     color: var(--primary);
-    text-shadow: 2px 2px 5px black;
+    text-shadow: 2px 2px 1px black;
 }
 
 .imagen-consultoria .texto-imagen, .imagen .texto-imagen p {
@@ -72,7 +72,8 @@ section.nuestra-metodologia {
     padding: 0;
     font-weight: bold;
     padding-left: 20px;
-    text-shadow: 2px 2px 5px black;
+    text-shadow: 3px 3px 1px black;
+    font-size: 25px;
 }
 
 
@@ -170,7 +171,7 @@ nav ul {
 }
 
 .nav-link {
-    margin-right: 40px;
+    margin-right: 25px;
     color: var(--light);
     color: var(--tertiary);
     font-weight: 600;
@@ -205,7 +206,7 @@ section.quienes-somos, section.por-que-elegirnos {
     margin: 0px 10px 70px 10px;
 }
 
-#Somos, #Servicios, #Contacto, #Clientes, #Elegirnos, #Metodologia {
+#Somos, #Servicios, #Contacto, #Clientes, #Elegirnos, #Metodologia, #Expertos {
     text-align: center;
     font-size: 32px;
     font-weight: 700;
@@ -218,8 +219,17 @@ section.quienes-somos, section.por-que-elegirnos {
     padding-bottom: 50px;
 }
 
-section.nuestros-servicios, section.nuestra-metologia {
+.container-quienes-somos h3, .container-por-que-elegirnos h3 {
+    text-align: center;
+    font-size: 25px;
+}
+
+section.nuestros-servicios, section.nuestra-metologia, section.nuestros-expertos {
     max-height: 100%;
+}
+
+.consultoria p {
+    margin: 0;
 }
 
 section.nuestros-clientes {
@@ -267,6 +277,16 @@ section.nuestros-clientes {
     height: 100%;
 }
 
+.container-nuestros-expertos {
+    padding: 0px 10px 70px 10px;
+    height: 100%;
+}
+
+.nuestros-expertos {
+    background: var(--primary);
+    width: 100%;
+}
+
 .nuestra-metodologia {
     background: var(--tertiary);
     width: 100%;
@@ -276,15 +296,16 @@ article.metodologia {
     width: 75vw;
 }
 
-#Servicios, #Metodologia {
+#Servicios, #Metodologia, #Expertos {
     color: #fff;
 }
 
 .cards {
     display: flex;
     justify-content: center;
-    gap: 100px;
+    gap: 20px;
     padding-top: 20px;
+    flex-wrap: wrap;
 }
 
 .consultoria, .entrenamiento {
@@ -301,6 +322,19 @@ article.metodologia {
     width: 400px;
     height: 300px;
     border-radius: 20px;
+}
+
+.container-nuestros-expertos .cards .consultoria {
+    height: 400px;
+}
+
+.consultoria h3 {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+article.consultoria a:hover {
+    background: black;
 }
 
 article.consultoria a {
@@ -326,12 +360,24 @@ section.contacto {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 3px;
+    cursor: pointer;
+}
+
+.email:hover {
+    background: black;
 }
 
 strong.numero {
+    color: var(--tertiary);
     font-size: 30px;
+    margin-bottom: 10px;
+}
+
+strong.numero:hover {
+    color: var(--primary);
 }
 
 .mapa {
@@ -395,6 +441,8 @@ footer {
 footer p {
     text-align: center;
     color: #fff;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .redes {
@@ -427,9 +475,11 @@ footer p {
 .horizontal-list {
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin-right: 20px;
+    margin-left: 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
     color: #fff;
 }
 
@@ -472,13 +522,17 @@ footer p {
     }
 
     .cards {
+        display: flex;
         flex-direction: column;
         align-items: center;
         gap: 20px;
         width: 100%;
-    }
+        flex-wrap: wrap;
+    } 
 
-    .container-nuestros-servicios, .container-nuestra-metodologia {
+
+
+    .container-nuestros-servicios, .container-nuestra-metodologia, .container-nuestros-expertos {
         height: 100%;
     }
 }
@@ -499,14 +553,17 @@ footer p {
     .consultoria, .entrenamiento {
         width: 335px;
     }
-
+.horizontal-list li {
+        width: 100px;
+    }
 }
 
 @media (max-width: 400px) {
     .sidebar {
         width: 100%;
     }
-}
+    
+} 
 
 .slide {
     padding-right: 80px;
