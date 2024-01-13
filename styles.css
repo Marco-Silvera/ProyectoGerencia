@@ -35,13 +35,28 @@ section.imagen {
     z-index: -2;
 }
 
+section.imagen-consultoria {
+    background-image: url(images/consultoria-2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 80px);
+    position: relative;
+    z-index: -2;
+}
+
+section.nuestra-metodologia {
+    display: flex;
+    justify-content: center;
+}
+
 .texto-imagen {
     position: absolute;
     right: 40px;
     top: 50%;
 }
 
-.imagen .texto-imagen h1 {
+.imagen-consultoria .texto-imagen h1, .imagen .texto-imagen h1 {
     margin: 0;
     padding: 0;
     padding-left: 20px;
@@ -51,7 +66,7 @@ section.imagen {
     text-shadow: 2px 2px 5px black;
 }
 
-.imagen .texto-imagen p {
+.imagen-consultoria .texto-imagen, .imagen .texto-imagen p {
     color: #fff;
     margin: 0;
     padding: 0;
@@ -71,9 +86,10 @@ header {
     width: 100%;
     height: 80px;
     transition: 0.7s;
+    z-index: 10;
 }
 
-header.abajo{
+header.abajo {
     background: #fff;
     border-bottom: gray 1px solid;
     height: 60px;
@@ -174,22 +190,22 @@ strong {
     font-weight: 700;
 }
 
-.container-quienes-somos {
+.container-quienes-somos, .container-por-que-elegirnos, .container-nuestra-metodologia {
     max-width: 1120px;
 }
 
-.container-quienes-somos p {
+.container-quienes-somos p, .container-por-que-elegirnos p {
     font-size: 20px;
     line-height: 30px;
 }
 
-section.quienes-somos {
+section.quienes-somos, section.por-que-elegirnos {
     display: flex;
     justify-content: center;
     margin: 0px 10px 70px 10px;
 }
 
-#Somos, #Servicios, #Contacto, #Clientes {
+#Somos, #Servicios, #Contacto, #Clientes, #Elegirnos, #Metodologia {
     text-align: center;
     font-size: 32px;
     font-weight: 700;
@@ -199,10 +215,10 @@ section.quienes-somos {
 }
 
 #Clientes, #Contacto {
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 
-section.nuestros-servicios {
+section.nuestros-servicios, section.nuestra-metologia {
     max-height: 100%;
 }
 
@@ -213,13 +229,54 @@ section.nuestros-clientes {
     align-items: center;
 }
 
-.container-nuestros-servicios {
+
+.nuestra-metodologia {
+    overflow: hidden; /* Asegura que el contenedor incluya los bordes */
+            padding: 0 40px 40px;
+}
+
+.container-nuestra-metodologia {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.container-nuestra-metodologia img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.metodologia {
+    margin: 10px;
+    height: 800px;
+}
+
+.metodologia img {
+    border-radius: 20px;
+    width: 100%;
+    margin-top: 20px;
+    max-height: 800px;
+    background-size: cover;
+}
+
+.container-nuestros-servicios, .container-nuestra-metodologia {
     background: var(--tertiary);
     padding: 0px 10px 70px 10px;
     height: 100%;
 }
 
-#Servicios {
+.nuestra-metodologia {
+    background: var(--tertiary);
+    width: 100%;
+}
+
+article.metodologia {
+    width: 75vw;
+}
+
+#Servicios, #Metodologia {
     color: #fff;
 }
 
@@ -262,6 +319,21 @@ section.contacto {
     text-align: center;   
 }
 
+.email {
+    background: var(--secondary);
+    height: 30px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 3px;
+}
+
+strong.numero {
+    font-size: 30px;
+}
+
 .mapa {
     background: var(--primary);
     padding: 4px 4px 0px 4px;
@@ -288,6 +360,18 @@ article a{
     line-height: 15px;
     font-weight: 500;
     border-radius: 8px;
+}
+
+article.entrenamiento button {
+    background: var(--primary);
+    padding: 10px 20px;
+    color: var(--light);
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 500;
+    border-radius: 8px;
+    font-family: inherit;
+    border: none;
 }
 
 .container-clientes {
@@ -394,7 +478,7 @@ footer p {
         width: 100%;
     }
 
-    .container-nuestros-servicios {
+    .container-nuestros-servicios, .container-nuestra-metodologia {
         height: 100%;
     }
 }
@@ -416,10 +500,6 @@ footer p {
         width: 335px;
     }
 
-    .slider:before, .slider:after {
-        width: 10px;
-
-    }
 }
 
 @media (max-width: 400px) {
@@ -444,7 +524,7 @@ footer p {
 .slider:before, .slider:after {
     position: absolute;
     top: 0;
-    width: 250px;
+    width: 100px;
     height: 100%;
     content: "";
     z-index: 2;
