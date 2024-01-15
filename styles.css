@@ -10,6 +10,10 @@
     --tertiary: #1a468e;
     --light: #eef8ff;
 
+    --brand-color: hsl(46, 100%, 50%);
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+
 }
 
 body {
@@ -26,7 +30,7 @@ body {
 
 
 section.imagen {
-    background-image: url(images/consultoria-1.jpg);
+    background-image: url(images/consultoria-1.webp);
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -36,7 +40,7 @@ section.imagen {
 }
 
 section.imagen-consultoria {
-    background-image: url(images/consultoria-2.jpg);
+    background-image: url(images/consultoria-2.webp);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -48,11 +52,12 @@ section.imagen-consultoria {
 section.nuestra-metodologia {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .texto-imagen {
     position: absolute;
-    right: 40px;
+    right: 5%;
     top: 50%;
 }
 
@@ -66,15 +71,7 @@ section.nuestra-metodologia {
     text-shadow: 2px 2px 1px black;
 }
 
-.imagen-consultoria .texto-imagen, .imagen .texto-imagen p {
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-    padding-left: 20px;
-    text-shadow: 3px 3px 1px black;
-    font-size: 25px;
-}
+
 
 
 header {
@@ -91,6 +88,16 @@ header {
     color: var(--light);
     text-shadow: 1px 1px 0.01px black;
     text-transform: uppercase;
+}
+
+.card__title {
+    color: var(--light);
+}
+p.card__description {
+    color: var(--light);
+    font-size: 18px;
+    text-shadow: 1px 1px 0.01px black; font-weight: 500;
+    line-height: 22px;
 }
 
 header.abajo {
@@ -174,6 +181,10 @@ nav ul {
     margin-left: 10px;
 }
 
+.logo img {
+    padding-right: 20px;
+}
+
 .nav-link {
     margin-right: 25px;
     color: var(--primary);
@@ -186,6 +197,17 @@ nav ul {
     color: var(--tertiary);
 }
 
+.link-inicio {
+    margin-right: 25px;
+    color: var(--primary);
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.link-inicio:hover {
+    color: var(--tertiary);
+}
+
 a {
     text-decoration: none;
 }
@@ -194,13 +216,12 @@ strong {
     font-weight: 700;
 }
 
-.container-quienes-somos, .container-por-que-elegirnos, .container-nuestra-metodologia {
+.container-quienes-somos, .container-por-que-elegirnos {
     max-width: 1120px;
 }
 
-.container-quienes-somos p, .container-por-que-elegirnos p {
-    font-size: 20px;
-    line-height: 30px;
+.container-nuestra-metodologia {
+    width: 100%;
 }
 
 section.quienes-somos, section.por-que-elegirnos {
@@ -242,10 +263,149 @@ section.nuestros-clientes {
     align-items: center;
 }
 
+.animated-cards {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+/* CARDS */
+
+.card {
+  display: grid;
+  place-items: center;
+  width: 80vw;
+  max-width: 21.875rem;
+  height: 28.125rem;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+}
+
+.card > * {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.card__background {
+  object-fit: cover;
+  max-width: 100%;
+  height: 100%;
+}
+
+.card__content {
+  --flow-space: 0.9375rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: flex-end;
+  height: 65%;
+  padding: 5% 1.25rem 1.875rem;
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 0%, 0) 0%,
+    hsla(0, 0%, 0%, 0.3) 10%,
+    hsl(0, 0%, 0%) 100%
+  );
+  transition: transform 500ms ease-out, opacity 500ms ease-;
+}
+
+
+.card__content--container {
+  --flow-space: 1rem;
+}
+
+.card__title {
+  position: relative;
+  width: fit-content;
+  width: -moz-fit-content; /* Prefijo necesario para Firefox  */
+}
+
+.card__title::after {
+  content: "";
+  position: absolute;
+  height: 0.3125rem;
+  width: calc(100% + 1.25rem);
+  bottom: calc((1.25rem - 0.5rem) * -1);
+  left: -1.25rem;
+  background-color: var(--primary);
+}
+
+@media (any-hover: hover) and (any-pointer: fine) {
+  .card__content {
+    transform: translateY(62%);
+    transition: transform 500ms ease-out;
+    transition-delay: 500ms;
+  }
+
+  .card__title::after {
+    opacity: 0;
+    transform: scaleX(0);
+    transition: opacity 1000ms ease-in, transform 500ms ease-out;
+    transition-delay: 500ms;
+    transform-origin: right;
+  }
+
+  .card__background {
+    transition: transform 500ms ease-in;
+  }
+
+
+  .card__content--container > :not(.card__title) {
+    opacity: 0;
+    transition: transform 500ms ease-out, opacity 500ms ease-out;
+  }
+
+  .card:hover,
+  .card:focus-within {
+    transition: transform 500ms ease-in;
+  }
+
+  .card:hover .card__content,
+  .card:focus-within .card__content {
+    transform: translateY(0);
+    transition: transform 500ms ease-in;
+  }
+
+  .card:focus-within .card__content {
+    transition-duration: 0ms;
+  }
+
+  .card:hover .card__background,
+  .card:focus-within .card__background {
+    transform: scale(1.3);
+  }
+
+  .card:hover .card__content--container > :not(.card__title),
+  .card:hover .card__button,
+  .card:focus-within .card__content--container > :not(.card__title),
+  .card:focus-within .card__button {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+    transition-delay: 1000ms;
+  }
+
+  .card:hover .card__title::after,
+  .card:focus-within .card__title::after {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: opacity 500ms ease-in, transform 500ms ease-in;
+    transition-delay: 500ms;
+  }
+}
+
 
 .nuestra-metodologia {
-    overflow: hidden; /* Asegura que el contenedor incluya los bordes */
-            padding: 0 40px 40px;
+    overflow: hidden;
 }
 
 .container-nuestra-metodologia {
@@ -253,12 +413,14 @@ section.nuestros-clientes {
     margin: 0 auto;
 }
 
-.container-nuestra-metodologia img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 20px;
+.container-nuestra-metodologia p {
+    color: var(--light);
+    font-weight: 600;
+    text-shadow: 1px 1px 5px black;
+}
+
+.container-nuestra-metodologia h3 {
+    color: var(--light);
 }
 
 .metodologia {
@@ -274,10 +436,51 @@ section.nuestros-clientes {
     background-size: cover;
 }
 
-.container-nuestros-servicios, .container-nuestra-metodologia {
+.container-nuestros-servicios {
     background: var(--tertiary);
     padding: 0px 10px 70px 10px;
     height: 100%;
+}
+
+.container-nuestra-metodologia {
+    padding: 0 40px 0 40px;
+}
+
+.tipos-metodologia {
+    background: var(--secondary);
+    width: 100%;
+    height: 100%;
+    padding: 0 40px 0 40px;
+    color: var(--light);
+}
+
+.tipos {
+    width: 100%;
+    height: 100%;
+    padding: 0 40px 0 40px;
+    background: var(--light);
+}
+
+.cuadro {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cuadro-comparativo {
+    display: flex;
+    justify-content: start;
+    border-radius: 20px;
+    max-width:  1000px;
+    overflow-x: hidden;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    
+}
+
+table {
+    min-width: 1000px;
 }
 
 .container-nuestros-expertos {
@@ -293,10 +496,6 @@ section.nuestros-clientes {
 .nuestra-metodologia {
     background: var(--tertiary);
     width: 100%;
-}
-
-article.metodologia {
-    width: 75vw;
 }
 
 #Servicios, #Metodologia, #Expertos {
@@ -354,23 +553,6 @@ section.contacto {
     justify-content: center;
     align-items: center;
     text-align: center;   
-}
-
-.email {
-    background: var(--secondary);
-    height: 30px;
-    width: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.email:hover {
-    background: black;
 }
 
 strong.numero {
@@ -432,6 +614,43 @@ article.entrenamiento button {
 
 #Contacto{
     margin: 0;
+}
+
+.botones-contacto {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 0 20px 0px;
+}
+
+.botones-contacto a button {
+    border: none;
+    height: 40px;
+    width: 120px;
+    border-radius: 20px;
+    background: var(--primary);
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+}
+
+.botones-contacto a {
+    border-radius: 20px;
+}
+
+.botones-contacto a:nth-child(1) button:hover, .botones-contacto a:nth-child(3) button:hover  {
+    background: black;
+}
+
+.botones-contacto a:nth-child(2) button:hover {
+    background: #25D366;
+}
+
+.botones-contacto a i {
+    padding-right: 5px;
 }
 
 footer {
@@ -513,6 +732,14 @@ footer p {
     border-radius: 50%;
 }
 
+@media (max-width: 1100px) {
+
+    .cuadro-comparativo {
+        overflow-x: auto;
+    }
+
+}
+
 @media (max-width: 950px) {
 
 
@@ -532,8 +759,6 @@ footer p {
         width: 100%;
         flex-wrap: wrap;
     } 
-
-
 
     .container-nuestros-servicios, .container-nuestra-metodologia, .container-nuestros-expertos {
         height: 100%;
@@ -564,6 +789,11 @@ footer p {
 @media (max-width: 400px) {
     .sidebar {
         width: 100%;
+    }
+
+    .botones-contacto {
+        flex-direction: column;
+        height: 150px;
     }
     
 } 
@@ -629,4 +859,82 @@ footer p {
         -webkit-animation: translateX(calc(-200px * 7));
         transform: translateX(calc(-200px * 7));
     }
+}
+
+
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+table {
+    width: 800px;
+    border-collapse: collapse;
+    overflow: hidden;
+    background: var(--light);
+}
+
+th, td {
+    padding: 15px;
+    color: #000000;
+}
+
+th {
+    text-align: left;
+}
+
+thead {
+    z-index: 1;
+}
+
+tbody tr:hover {
+    background-color: rgba(22, 99, 223, 0.3);
+}
+
+tr:nth-child(2), tr:nth-child(4), tr:nth-child(6), tr:nth-child(8) {
+    background: #f5f5f5;
+}
+
+tr:nth-child(1), tr:nth-child(3), tr:nth-child(5), tr:nth-child(7) {
+    background: #ffffff;
+}
+
+thead th, tr td:nth-child(1) {
+    background: #212529;
+    color: var(--light);
+}
+
+thead tr th:nth-child(1) {
+    background: var(--light);
+}
+
+table {
+    width: 100%;
+    border-radius: 20px;
+}
+
+tbody tr:nth-child(1) td:nth-child(1), thead tr th:nth-child(2), tbody tr:nth-child(1) {
+    border-top-left-radius: 20px;
+}
+
+
+.imagen-consultoria .texto-imagen, .imagen .texto-imagen p {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    padding-left: 20px;
+    text-shadow: 3px 3px 1px black;
+    font-size: 25px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.tipos h3 {
+    font-size: 20px;
 }
