@@ -9,11 +9,6 @@
     --secondary: #1d79f3;
     --tertiary: #1a468e;
     --light: #eef8ff;
-
-    --brand-color: hsl(46, 100%, 50%);
-  --black: hsl(0, 0%, 0%);
-  --white: hsl(0, 0%, 100%);
-
 }
 
 body {
@@ -230,7 +225,15 @@ section.quienes-somos, section.por-que-elegirnos {
     margin: 0px 10px 70px 10px;
 }
 
-#Somos, #Servicios, #Contacto, #Clientes, #Elegirnos, #Metodologia, #Expertos {
+section.info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 40px 70px 40px;
+    background: var(--tertiary);
+}
+
+#Somos, #Servicios, #Contacto, #Clientes, #Elegirnos, #Metodologia, #Expertos, #Info {
     text-align: center;
     font-size: 32px;
     font-weight: 700;
@@ -413,13 +416,42 @@ section.nuestros-clientes {
     margin: 0 auto;
 }
 
-.container-nuestra-metodologia p {
+.container-nuestra-metodologia p, .info > p {
     color: var(--light);
     font-weight: 600;
     text-shadow: 1px 1px 5px black;
 }
 
-.container-nuestra-metodologia h3 {
+.container-info {
+    background: var(--secondary);
+    padding: 40px 40px 70px 40px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.gobierno-estrategico, .gestion-ti {
+    display: flex;
+    flex-direction: column;
+    background: var(--light);
+    max-width: 600px;
+    padding: 0 20px 0 20px;
+    border-radius: 20px;
+    height: 400px;
+    justify-content: space-between;
+}
+
+.gobierno-estrategico h2, .gestion-ti h2 {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.gobierno-estrategico p, .gestion-ti p {
+    font-size: 18px;
+}
+
+.container-nuestra-metodologia h3, #Info {
     color: var(--light);
 }
 
@@ -440,6 +472,69 @@ section.nuestros-clientes {
     background: var(--tertiary);
     padding: 0px 10px 70px 10px;
     height: 100%;
+}
+
+section.acordeon {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: var(--light);
+}
+
+.contenedor-acordeon {
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 80px;
+}
+
+.contenedor-acordeon h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 35px;
+}
+
+.acordeon {
+    background: white;
+}
+
+.acordeon label {
+    display: block;
+    padding: 20px;
+    font-size: 20px;
+    background: var(--secondary);
+    color: white;
+    cursor: pointer;
+    margin-bottom: 2px;
+    transition: all 300ms ease;
+}
+
+.acordeon .contenido-acordeon {
+    padding: 0px;
+    margin: 0 20px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 300ms ease;
+}
+
+.btn-acordeon:checked ~ .contenido-acordeon {
+    max-height: 600px;
+    padding: 15px 0px;
+}
+
+.btn-acordeon:checked ~ label {
+    background: var(--tertiary);
+}
+
+.btn-acordeon {
+    display: none;
+
+}
+
+@media screen and (max-width:900px) {
+
+    .contenedor-acordeon {
+        width: 90%;
+    }
 }
 
 .container-nuestra-metodologia {
@@ -657,7 +752,7 @@ footer {
     padding-top: 20px;
     background: var(--primary);
     width: 100%;
-    height: 200px;
+    height: 250px;
 }
 
 footer p {
@@ -742,6 +837,9 @@ footer p {
 
 @media (max-width: 950px) {
 
+    .container-info {
+        flex-direction: column;
+    }
 
     .menu-button {
         display: block;
