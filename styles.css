@@ -266,7 +266,7 @@ section.nuestros-clientes {
     align-items: center;
 }
 
-.animated-cards {
+.animated-cards, .animated-cards-inicio {
     width: 100%;
     overflow: hidden;
     display: flex;
@@ -274,6 +274,17 @@ section.nuestros-clientes {
     justify-content: center;
     align-items: center;
     gap: 40px;
+    padding: 0px 200px 70px 200px;
+}
+
+.animated-cards-inicio {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 .flow > * + * {
@@ -423,12 +434,13 @@ section.nuestros-clientes {
 }
 
 .container-info {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 50px;
+    flex-wrap: wrap;
     background: var(--secondary);
     padding: 40px 40px 70px 40px;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
 }
 
 .gobierno-estrategico, .gestion-ti {
@@ -436,10 +448,10 @@ section.nuestros-clientes {
     flex-direction: column;
     background: var(--light);
     max-width: 600px;
+    padding: 15px 0px;
     padding: 0 20px 0 20px;
     border-radius: 20px;
-    height: 400px;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .gobierno-estrategico h2, .gestion-ti h2 {
@@ -484,7 +496,7 @@ section.acordeon {
 .contenedor-acordeon {
     width: 100%;
     max-width: 1000px;
-    margin-top: 80px;
+    margin-top: 20px;
 }
 
 .contenedor-acordeon h2 {
@@ -498,7 +510,7 @@ section.acordeon {
 }
 
 .acordeon label {
-    display: block;
+    display: flex;
     padding: 20px;
     font-size: 20px;
     background: var(--secondary);
@@ -835,7 +847,7 @@ footer p {
 
 }
 
-@media (max-width: 950px) {
+@media (max-width: 960px) {
 
     .container-info {
         flex-direction: column;
@@ -879,7 +891,8 @@ footer p {
     .consultoria, .entrenamiento {
         width: 335px;
     }
-.horizontal-list li {
+    
+    .horizontal-list li {
         width: 100px;
     }
 }
@@ -1023,8 +1036,8 @@ tbody tr:nth-child(1) td:nth-child(1), thead tr th:nth-child(2), tbody tr:nth-ch
     color: #fff;
     margin: 0;
     padding: 0;
-    font-weight: bold;
     padding-left: 20px;
+    font-weight: bold;
     text-shadow: 3px 3px 1px black;
     font-size: 25px;
 }
@@ -1036,3 +1049,165 @@ p {
 .tipos h3 {
     font-size: 20px;
 }
+
+
+
+
+#slider {
+    width: 100%;
+    height: calc(100vh - 80px);
+    overflow: hidden;
+  }
+  
+  #contenedor {
+    display: grid;
+    grid-template-columns: 100% 100% 100% 100%;
+    animation-name: mover;
+    animation-duration: 50s;
+    width: 100%;
+    animation-iteration-count: infinite;
+  }
+  
+  #imagen1 {
+    position: relative;
+    background: url("images/consultoria-1.webp");
+    height: calc(100vh - 80px);
+    background-size: cover;
+    background-position: center top;
+  }
+  
+  #imagen2 {
+    position: relative;
+    background: url("images/consultoria-2.webp");
+    height: calc(100vh - 80px);
+    background-size: cover;
+    background-position: center top;
+  }
+  
+  #imagen3 {
+    position: relative;
+    background: url("images/consultoria-3.webp");
+    height: calc(100vh - 80px);
+    background-size: cover;
+    background-position: center top;
+  }
+  
+  #imagen4 {
+    position: relative;
+    background: url("images/consultoria-4.webp");
+    height: calc(100vh - 80px);
+    background-size: cover;
+    background-position: center top;
+  }
+
+  #imagen5 {
+    position: relative;
+    background: url("images/consultoria-5.webp");
+    height: calc(100vh - 80px);
+    background-size: cover;
+    background-position: center top;
+  }
+
+  #imagen6 {
+    position: relative;
+    background: url("images/consultoria-6.webp");
+    height: calc(100vh - 80px);
+    background-size: cover;
+    background-position: center top;
+  }
+
+  #imagen7 {
+    position: relative;
+    background: url("images/consultoria-7.webp");
+    height: calc(100vh - 80px);
+    background-size: cover;
+    background-position: center top;
+  }
+
+  #imagen8 {
+    position: relative;
+    background: url("images/consultoria-8.webp");
+    height: calc(100vh - 80px);
+    background-size: cover;
+    background-position: center top;
+  }
+
+  /* .fondo-slider {
+    position: absolute;
+    background: linear-gradient(green, blue);
+    width: 100%;
+    height: calc(100vh - 80px);
+    opacity: 0.7;
+  } */
+  
+#imagen1 h2, #imagen2 h2, #imagen3 h2, #imagen4 h2, #imagen5 h2, #imagen6 h2, #imagen7 h2, #imagen8 h2 {
+    position: relative;
+    right: 10px;
+    margin: auto;
+    top: 40%;
+    color: white;
+    text-align: right;
+    font-size: 40px;
+    color: var(--primary);
+    text-shadow: 2px 2px 1px black;
+  }
+  
+  #imagen1 p, #imagen2 p, #imagen3 p, #imagen4 p, #imagen5 p, #imagen6 p, #imagen7 p, #imagen8 p {
+    position: relative;
+    right: 10px;
+    margin: auto;
+    top: 40%;
+    color: white;
+    text-align: right;
+    font-weight: bold;
+    text-shadow: 3px 3px 1px black;
+    font-size: 25px;
+  }
+  
+  @keyframes mover {
+    14.3% {
+      margin-left: 0%;
+    }
+    18.3% {
+      margin-left: -100%;
+    }
+    
+    28.6% {
+      margin-left: -100%
+    }
+    32.6% {
+      margin-left: -200%;
+    }
+   
+    42.9% {
+      margin-left: -200%;
+    }
+    46.9% {
+      margin-left: -300%;
+    }
+    
+    57.2% {
+      margin-left: -300%;
+    }
+    61.2% {
+      margin-left: -200%;
+    }
+    
+    71.5% {
+      margin-left: -200%;
+    }
+    75.5% {
+      margin-left: -100%;
+    }
+    
+    85.8% {
+      margin-left: -100%;
+    }
+    89.8% {
+      margin-left: 0%;
+    }
+    
+    100% {
+      margin-left: 0%
+    }
+  }
