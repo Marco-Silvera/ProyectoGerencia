@@ -219,10 +219,16 @@ strong {
     width: 100%;
 }
 
-section.quienes-somos, section.por-que-elegirnos {
+section.por-que-elegirnos {
     display: flex;
     justify-content: center;
     margin: 0px 10px 70px 10px;
+}
+
+section.quienes-somos {
+    display: flex;
+    justify-content: center;
+    margin: 0px 10px 30px 10px;
 }
 
 section.info {
@@ -848,10 +854,6 @@ footer p {
 }
 
 @media (max-width: 960px) {
-
-    .container-info {
-        flex-direction: column;
-    }
 
     .menu-button {
         display: block;
