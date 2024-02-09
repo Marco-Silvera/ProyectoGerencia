@@ -731,7 +731,6 @@ article.entrenamiento button {
 }
 
 .botones-contacto {
-    min-width: 100%;
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -817,6 +816,7 @@ footer p {
     justify-content: center;
     align-items: center;
     color: #fff;
+    text-align: center;
 }
 
 .horizontal-list li {
